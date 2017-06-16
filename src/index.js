@@ -103,7 +103,7 @@ class SWPrecacheWebpackPlugin {
     const assetGlobs = Object
       .keys(compilation.assets)
       .map(f => {
-        return (f === 'index.html') ? f : path.join(outputPath, f);
+        return (f === 'index.html') ? path.join('/', f) : path.join(outputPath, f);
       });
 
     // merge assetGlobs with provided staticFileGlobs and filter using staticFileGlobsIgnorePatterns
